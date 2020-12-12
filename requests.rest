@@ -1,0 +1,36 @@
+GET http://localhost:8000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FuZXNoIiwiaWF0IjoxNjA3NzU5OTg1LCJleHAiOjE2MDc3NjAwMDV9.faYP5TFWm83DLO92W63hopHQVGLkagD2qIHzX0AjbRM
+
+###
+
+POST http://localhost:9000/auth/token
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FuZXNoIiwiaWF0IjoxNjA3NzU5MTY0fQ.gTh5K5zCkdeIYnbdiWOngUSLdyP9J4-yDGOe-WUn0VI"
+}
+
+###
+POST http://localhost:9000/auth/login
+Content-Type: application/json
+
+{
+    "username": "ganesh",
+    "password": "password"
+}
+
+###
+
+DELETE http://localhost:9000/auth/logout
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FuZXNoIiwiaWF0IjoxNjA3NzU5MTY0fQ.gTh5K5zCkdeIYnbdiWOngUSLdyP9J4-yDGOe-WUn0VI"
+}
+
+###
+
+POST  http://localhost:9000/users
+Content-Type: application/json
+
+{"username":"moin","password":"password", "firstName":"Ganesh", "lastName":"Babu"}
