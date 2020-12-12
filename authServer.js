@@ -118,7 +118,7 @@ function saveRefreshTokenToDb(refreshToken) {
 }
 
 function generateAccessToken(user) {
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: 20 })
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: parseInt(process.env.TOKEN_EXPIRY_TIME) })
 }
 
 app.get('*', (req, res) => {

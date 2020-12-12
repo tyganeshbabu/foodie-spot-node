@@ -1,5 +1,5 @@
 GET http://localhost:8000/products
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FuZXNoIiwiaWF0IjoxNjA3NzU5OTg1LCJleHAiOjE2MDc3NjAwMDV9.faYP5TFWm83DLO92W63hopHQVGLkagD2qIHzX0AjbRM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FuZXNoIiwiaWF0IjoxNjA3NzYyNDk0LCJleHAiOjE2MDc3NjI1MTR9.M-cXnjQ8VN5_aoLDiJ91Pzj3qdYSbtAwScQuVAPzdRA
 
 ###
 
@@ -34,3 +34,16 @@ POST  http://localhost:9000/users
 Content-Type: application/json
 
 {"username":"moin","password":"password", "firstName":"Ganesh", "lastName":"Babu"}
+
+###
+
+POST http://localhost:8000/orders/5fd45d41b4f3e8117034701f
+Content-Type: application/json
+
+{"products": [{"title":"Veg Masala Rolls","unit":100},{"title":"Vegetable Briyani","unit":12}],"total": 900}
+
+###
+
+
+GET http://localhost:8000/orders/5fd45d41b4f3e8117034701f
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZ2FuZXNoIiwiaWF0IjoxNjA3NzY3NzM3LCJleHAiOjE2MDc3Njc3NTd9.f5UJz6Y1z3S6C9QgRx42f5RIPcW2aXCtZgzW81Ko8UI
