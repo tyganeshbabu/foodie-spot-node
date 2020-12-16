@@ -9,7 +9,7 @@ app.use(cors());
 
 const Schema = mongoose.Schema;
 const productSchema = new Schema({
-    "imgUrl": String,
+    "imgurl": String,
     "title": String,
     "type": String,
     "unitprice": Schema.Types.Decimal128
@@ -89,6 +89,25 @@ app.post('/orders/:userId', authenticateToken, async (req, res) => {
                 res.status(400).json({ status: res.statusCode, method: req.method, message: err });
             });
     } catch {
+        res.status(500).json({ status: res.statusCode, method: req.method, message: process.env.MSG_500 });
+    }
+})
+
+app.post('/products', async (req, res) => {
+    console.log('inside');
+    try {
+        const { imgurl, title, type, unitprice } = req.body;
+        let productObj = new Products({ imgurl, title, type, unitprice });
+        console.log(productObj);
+        await productObj.save()
+            .then(item => {
+                res.status(200).json({ status: res.statusCode, method: req.method, message: "Product Saved to Database" });
+            })
+            .catch(err => {
+                res.status(400).json({ status: res.statusCode, method: req.method, message: err });
+            });
+    } catch (err) {
+        console.log(err);
         res.status(500).json({ status: res.statusCode, method: req.method, message: process.env.MSG_500 });
     }
 })

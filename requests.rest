@@ -47,3 +47,11 @@ Content-Type: application/json
 
 GET http://localhost:9000/orders/5fd45cafb4f3e81170347019
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicGF1bCIsImlkIjoiNWZkNDVjYWZiNGYzZTgxMTcwMzQ3MDE5IiwiaWF0IjoxNjA3OTY4NTgyLCJleHAiOjE2MDc5Njk0ODJ9.0Bfl1Rp15ydUkDPVo-Ecg3wiJNa5cvfY9bytY98xDHo
+
+
+###
+POST http://localhost:8000/products
+Content-Type: application/json
+
+{"imgurl":"https://foodie-spot.s3.us-east-2.amazonaws.com/fish-salad.jpg","title":"Fish Salad","type":"non-veg","unitprice":300}
+
